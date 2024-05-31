@@ -137,6 +137,21 @@ class MainActivity : AppCompatActivity() {
         //Log.d("kotlintest", "私の名前は" + man.name + "です。年は" + man.age + "歳です。")
         man.think()
 
+        val str: String? = "kotlin"
+        Log.d("kotlintest", str.length.toString())//nullの可能性があるためエラーになる
+
+        if (str != null){
+            //nullでない場合のみ処理が行われるのでエラーにならない
+            Log.d("kotlintest", str.length.toString())
+        }
+
+        var str: String? = null
+        if(str?.length == null){
+            Log.d("kotlintest", "str.lengthの結果はnull")
+        } else {
+            Log.d("kotlintest", "str.lengthの結果は" + str.length)
+        }
+
 //        var str1 = "Hello"
 //        var str2 = "Hello"
 //        var str3 = "Hello"
